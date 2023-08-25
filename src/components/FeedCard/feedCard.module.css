@@ -1,0 +1,58 @@
+.cardContainer {
+    width: 60%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid grey;
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.authorAndAvatarContainer {
+    display: flex;
+    align-items: center;
+}
+
+.imageContainer {
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.authorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.contentContainer {
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    border: 1px solid grey;
+}
+
+.emoticonContainer {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+}
+
+.content {
+    width: 80%;
+    margin-left: 10px;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+}
