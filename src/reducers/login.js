@@ -19,6 +19,7 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: false,
         username: "",
+        loginType: "SIGN_IN",
       };
     case ACTION_TYPES.TOGGLE_SIGN_IN_TYPE:
       return {
