@@ -1,5 +1,14 @@
-#root {
-width: 100%;
+body {
+  font-size: 14px;
 }
 
+button {
+  cursor: pointer;
+}
 
+.home {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  max-width: 600px;
+}

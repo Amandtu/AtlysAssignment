@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.modalContainer {
+  box-sizing: border-box;
+  width: 400px;
+  border: 2px solid #7b7b7b;
+  border-radius: 8px;
+  padding: 30px 20px;
+  background-color: #27292d;
+}
+
+.title {
+  color: #6b6c70;
+  text-align: center;
+}
+
+.subText {
+  text-align: center;
+}
+
+.cta {
+  color: #c5c7ca;
+  background-color: transparent;
+  border: none;
+  padding: 0 10px;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 import styles from "./feedCard.module.css";
 
@@ -11,20 +11,35 @@ export const FeedCard = React.memo(function FeedCard({
   emoticon,
   commentCount,
 }) {
+  const renderAvatar = useMemo(
+    () => (
+      <div className={styles.imageContainer}>
+        <img className={styles.image} src={imgSrc} />
+      </div>
+    ),
+    [imgSrc]
+  );
+
+  const renderAuthor = useMemo(
+    () => (
+      <div className={styles.authorContainer}>
+        <div>{author}</div>
+        <div style={{ color: "#7f8083" }}>
+          {time}
+          {edited ? <span> &#x2022; Edited</span> : ""}
+        </div>
+      </div>
+    ),
+    [author, time, edited]
+  );
+
   const renderHeader = () => (
     <div className={styles.headerContainer}>
       <div className={styles.authorAndAvatarContainer}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={imgSrc} />
-        </div>
-        <div className={styles.authorContainer}>
-          <div>{author}</div>
-          <div>
-            {time} {edited ? " &#x2022 Edited" : ""}
-          </div>
-        </div>
+        {renderAvatar}
+        {renderAuthor}
       </div>
-      <div>...</div>
+      <div role="button">...</div>
     </div>
   );
 
@@ -40,7 +55,7 @@ export const FeedCard = React.memo(function FeedCard({
   const renderFooter = () =>
     commentCount ? (
       <div>
-        <span>{String.fromCodePoint('0x1F5E8')}</span>
+        <span>{String.fromCodePoint("0x1F5E8")}</span>
         <span>
           &nbsp; {commentCount} {commentCount > 1 ? "comments" : "comment"}
         </span>
@@ -55,5 +70,3 @@ export const FeedCard = React.memo(function FeedCard({
     </div>
   );
 });
-
-
