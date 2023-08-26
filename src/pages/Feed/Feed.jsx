@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useMemo } from "react";
 import { connect } from "react-redux";
 
-import { addNewFeed, fetchFeed } from "../../actions/feed";
+import { addNewFeed, fetchFeed, resetFeed } from "../../actions/feed";
 import { FeedCard } from "../../components/FeedCard/FeedCard";
 import CreateFeed from "../../components/CreateFeed/CreateFeed";
 import { FEED_DATA } from "../../mockData";
 
 import styles from "./feed.module.css";
+import { logOutAction } from "../../actions/login";
 
 function Feed({ data, actions, username }) {
   useEffect(() => {
@@ -20,17 +21,33 @@ function Feed({ data, actions, username }) {
     [actions]
   );
 
+  const onLogout = useCallback(() => {
+    actions.onLogout();
+    actions.onReset();
+  }, [actions]);
+
   const renderWelcomeMessage = useMemo(
     () => (
-      <div>
-        <div className={styles.welcome}>Welcome {username}</div>
-        <div className={styles.subTitle}>
-          How are you doing today? Would you like to share something with the
-          community
+      <div className={styles.welcomeContainer}>
+        <div>
+          <div className={styles.welcome}>Welcome {username}</div>
+          <div className={styles.subTitle}>
+            How are you doing today? Would you like to share something with the
+            community
+          </div>
+        </div>
+        <div>
+          <button
+            className={styles.logoutButton}
+            type="button"
+            onClick={onLogout}
+          >
+            Logout
+          </button>
         </div>
       </div>
     ),
-    [username]
+    [username, onLogout]
   );
 
   return (
@@ -50,6 +67,8 @@ const mapDispatchToProps = dispatch => ({
   actions: {
     fetchFeed: data => dispatch(fetchFeed(data)),
     addNewFeed: data => dispatch(addNewFeed(data)),
+    onLogout: () => dispatch(logOutAction()),
+    onReset: () => dispatch(resetFeed()),
   },
 });
 

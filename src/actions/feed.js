@@ -9,3 +9,7 @@ export const addNewFeed = data => ({
   type: ACTION_TYPES.SET_FEED_DATA,
   payload: data,
 });
+
+export const resetFeed = () => ({
+  type: ACTION_TYPES.RESET_FEED_DATA,
+});

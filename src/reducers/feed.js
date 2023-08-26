@@ -16,6 +16,11 @@ const feedReducer = (state = initialState, action) => {
         ...state,
         data: [action.payload, ...state.data],
       };
+    case ACTION_TYPES.RESET_FEED_DATA:
+      return {
+        ...state,
+        data: [],
+      };
     default:
       return state;
   }
