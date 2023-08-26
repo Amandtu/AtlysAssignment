@@ -5,8 +5,9 @@ export const toggleSignInType = loginType => ({
   payload: loginType,
 });
 
-export const logInAction = () => ({
+export const logInAction = username => ({
   type: ACTION_TYPES.SIGN_IN,
+  payload: username,
 });
 
 export const logOutAction = () => ({

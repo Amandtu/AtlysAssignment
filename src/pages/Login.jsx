@@ -19,7 +19,7 @@ function Login({ actions, loginType }) {
 const mapDispatchToProps = dispatch => ({
   actions: {
     toggleSignIn: loginType => dispatch(toggleSignInType(loginType)),
-    onLoginSuccess: () => dispatch(logInAction()),
+    onLoginSuccess: username => dispatch(logInAction(username)),
   },
 });
 

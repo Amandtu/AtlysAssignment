@@ -28,7 +28,7 @@ export const SignInForm = React.memo(function SignInForm({ onSuccessCb }) {
     formData => {
       const { username, password } = formData || {};
       if (username?.length && password?.length) {
-        onSuccessCb();
+        onSuccessCb(username);
         return;
       }
 

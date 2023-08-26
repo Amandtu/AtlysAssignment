@@ -1,64 +1,63 @@
 .cardContainer {
-    width: 60%;
-    max-width: 600px;
-    padding: 20px;
-    border: 2px solid #35373b;
-    border-radius: 8px;
-    background-color: #27292d;
+  margin: 10px 0;
+  padding: 20px;
+  border: 2px solid #35373b;
+  border-radius: 8px;
+  background-color: #27292d;
 }
 
 .headerContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .authorAndAvatarContainer {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .imageContainer {
-    height: 40px;
-    width: 40px;
-    overflow: hidden;
-    border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .authorContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 10px;
-    color: #c5c7ca;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 10px;
+  color: #c5c7ca;
 }
 
 .contentContainer {
-    margin: 10px 0;
-    padding: 15px;
-    display: flex;
-    border: 1px solid #232529;
-    border-radius: 8px;
-    background-color: #191920;
-    color: #7f8083;
+  margin: 10px 0;
+  padding: 15px;
+  display: flex;
+  border: 1px solid #232529;
+  border-radius: 8px;
+  background-color: #191920;
+  color: #7f8083;
 }
 
 .emoticonContainer {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #27292d;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #27292d;
 }
 
 .content {
-    flex: 1;
-    margin-left: 15px;
+  flex: 1;
+  margin-left: 15px;
 }
 
 .image {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }

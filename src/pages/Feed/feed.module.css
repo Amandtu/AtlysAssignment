@@ -1,0 +1,20 @@
+.feedHome {
+  display: flex;
+  justify-content: center;
+}
+
+.fitContent {
+  max-width: 600px;
+}
+
+.welcome {
+  margin-top: 80px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #c5c7ca;
+}
+
+.subTitle {
+  color: #7f8083;
+  margin-bottom: 30px;
+}

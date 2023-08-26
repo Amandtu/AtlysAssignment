@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import Login from "./Login";
-import Feed from "./Feed";
+import Feed from "./Feed/Feed";
 
 function Home({ isLoggedIn }) {
   return <div>{isLoggedIn ? <Feed /> : <Login />}</div>;

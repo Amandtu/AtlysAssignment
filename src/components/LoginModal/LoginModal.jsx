@@ -19,7 +19,10 @@ function Modal({ actions, loginType }) {
     [actions, toggleType]
   );
 
-  const onSuccessCb = useCallback(() => actions.onLoginSuccess(), [actions]);
+  const onSuccessCb = useCallback(
+    username => actions.onLoginSuccess(username),
+    [actions]
+  );
 
   return (
     <div className={styles.wrapper}>

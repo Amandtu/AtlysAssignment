@@ -1,6 +1,6 @@
 import * as ACTION_TYPES from "../actionTypes/feed";
 
-export const toggleSignInType = data => ({
+export const fetchFeed = data => ({
   type: ACTION_TYPES.FETCH_FEED_DATA,
   payload: data,
 });

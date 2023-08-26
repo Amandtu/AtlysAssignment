@@ -2,6 +2,7 @@ import * as ACTION_TYPES from "../actionTypes/login";
 
 const initialState = {
   isLoggedIn: false,
+  username: "",
   loginType: "SIGN_IN",
 };
 
@@ -11,11 +12,13 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true,
+        username: action.payload,
       };
     case ACTION_TYPES.SIGN_OUT:
       return {
         ...state,
         isLoggedIn: false,
+        username: "",
       };
     case ACTION_TYPES.TOGGLE_SIGN_IN_TYPE:
       return {

@@ -37,7 +37,7 @@ export const SignUpForm = React.memo(function SignUpForm({ onSuccessCb }) {
         password?.length &&
         email?.indexOf("@") !== -1
       ) {
-        onSuccessCb();
+        onSuccessCb(username);
         return;
       }
 
