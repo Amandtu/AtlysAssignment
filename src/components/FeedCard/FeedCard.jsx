@@ -55,7 +55,7 @@ export const FeedCard = React.memo(function FeedCard({
   const renderFooter = () =>
     commentCount ? (
       <div>
-        <span>{String.fromCodePoint("0x1F5E8")}</span>
+        <span>{String.fromCodePoint("0x1F4AC")}</span>
         <span>
           &nbsp; {commentCount} {commentCount > 1 ? "comments" : "comment"}
         </span>

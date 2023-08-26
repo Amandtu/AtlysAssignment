@@ -7,7 +7,7 @@ export const FEED_DATA = [
     edited: false,
     feedContent:
       "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups",
-    emoticon: "0x1F601",
+    emoticon: "0x270C",
     commentCount: 5,
   },
   {

@@ -1,8 +1,9 @@
-import React, { useEffect, useMemo } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { connect } from "react-redux";
 
-import { fetchFeed } from "../../actions/feed";
+import { addNewFeed, fetchFeed } from "../../actions/feed";
 import { FeedCard } from "../../components/FeedCard/FeedCard";
+import CreateFeed from "../../components/CreateFeed/CreateFeed";
 import { FEED_DATA } from "../../mockData";
 
 import styles from "./feed.module.css";
@@ -11,6 +12,13 @@ function Feed({ data, actions, username }) {
   useEffect(() => {
     setTimeout(() => actions.fetchFeed(FEED_DATA), 500);
   }, []);
+
+  const onFeedCreate = useCallback(
+    feedData => {
+      actions.addNewFeed(feedData);
+    },
+    [actions]
+  );
 
   const renderWelcomeMessage = useMemo(
     () => (
@@ -24,10 +32,12 @@ function Feed({ data, actions, username }) {
     ),
     [username]
   );
+
   return (
     <div className={styles.feedHome}>
       <div className={styles.fitContent}>
         {renderWelcomeMessage}
+        <CreateFeed username={username} onSuccessCb={onFeedCreate} />
         {data.map(feedItem => (
           <FeedCard key={feedItem.id} {...feedItem} />
         ))}
@@ -39,6 +49,7 @@ function Feed({ data, actions, username }) {
 const mapDispatchToProps = dispatch => ({
   actions: {
     fetchFeed: data => dispatch(fetchFeed(data)),
+    addNewFeed: data => dispatch(addNewFeed(data)),
   },
 });
 

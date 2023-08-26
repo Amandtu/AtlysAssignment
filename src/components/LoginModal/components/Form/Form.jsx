@@ -119,7 +119,7 @@ export const Form = React.memo(function Form({
         {emailConfig ? renderEmail() : null}
         {renderUsername()}
         {renderPassword()}
-        <div className="button-container">
+        <div>
           <button className={styles.submitCTA} type="submit">
             {submitCTAText}
           </button>
