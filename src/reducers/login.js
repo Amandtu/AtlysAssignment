@@ -9,14 +9,17 @@ const loginReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.SIGN_IN:
       return {
+        ...state,
         isLoggedIn: true,
       };
     case ACTION_TYPES.SIGN_OUT:
       return {
+        ...state,
         isLoggedIn: false,
       };
     case ACTION_TYPES.TOGGLE_SIGN_IN_TYPE:
       return {
+        ...state,
         loginType: action.payload,
       };
     default:

@@ -1,14 +1,3 @@
-export const USER_CREDENTIALS = [
-  {
-    username: "user1",
-    password: "pass1",
-  },
-  {
-    username: "user2",
-    password: "pass2",
-  },
-];
-
 export const FEED_DATA = [
   {
     imgSrc: "https://picsum.photos/200/300",

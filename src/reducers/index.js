@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 
 import loginReducer from "./login";
-// import feed from "./feed";
+import feedReducer from "./feed";
 
-export const rootReducer = combineReducers({
+export default combineReducers({
   auth: loginReducer,
-  //   feed,
+  feed: feedReducer,
 });

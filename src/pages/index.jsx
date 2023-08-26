@@ -5,7 +5,7 @@ import Login from "./Login";
 import Feed from "./Feed";
 
 function Home({ isLoggedIn }) {
-  return <div className="home">{isLoggedIn ? <Feed /> : <Login />}</div>;
+  return <div>{isLoggedIn ? <Feed /> : <Login />}</div>;
 }
 
 const mapStateToProps = state => {

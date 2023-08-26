@@ -3,22 +3,18 @@ import React, { useCallback, useState } from "react";
 import { Form } from "./Form/Form";
 
 const FORM_CONFIG = {
-  email: {
-    label: "Email",
-    placeholder: "Enter your email",
-  },
   username: {
-    label: "Username",
-    placeholder: "Choose a preferred username",
+    label: "Email or Username",
+    placeholder: "Enter your email or username",
   },
   password: {
     label: "Password",
-    placeholder: "Choose a strong password",
+    placeholder: "Enter your password",
   },
-  submitCTAText: "Continue",
+  submitCTAText: "Login now",
 };
 
-export const SignUpForm = React.memo(function SignUpForm({ onSuccessCb }) {
+export const SignInForm = React.memo(function SignInForm({ onSuccessCb }) {
   const [validationError, setValidationError] = useState({});
 
   const handleErrorOnChange = useCallback(key => {
@@ -30,32 +26,15 @@ export const SignUpForm = React.memo(function SignUpForm({ onSuccessCb }) {
 
   const onSubmit = useCallback(
     formData => {
-      const { email, username, password } = formData || {};
-      if (
-        email?.length &&
-        username?.length &&
-        password?.length &&
-        email?.indexOf("@") !== -1
-      ) {
+      const { username, password } = formData || {};
+      if (username?.length && password?.length) {
         onSuccessCb();
         return;
       }
 
       let error = {};
-      if (email?.length) {
-        if (email.indexOf("@") === -1) {
-          error = {
-            email: "Invalid Email",
-          };
-        }
-      } else {
-        error = {
-          email: "Email cannot be empty",
-        };
-      }
       if (!username?.length) {
         error = {
-          ...error,
           username: "Username cannot be empty",
         };
       }

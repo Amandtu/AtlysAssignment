@@ -5,10 +5,3 @@ body {
 button {
   cursor: pointer;
 }
-
-.home {
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  max-width: 600px;
-}
